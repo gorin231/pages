@@ -1,0 +1,169 @@
+.scroll-block {
+    margin-bottom: (150*$rem);
+
+    ul{
+        transition: transform 1s;
+        display: inline-block;
+    }
+
+    ul li{
+        position: relative;
+
+        margin-right: .4rem;
+        display: inline-block;
+
+        &:hover {
+            .form-init--back, .pack-init--back, .check-pack-init--back {
+                display: block;
+            }
+        }
+    }
+}
+
+.form-init, .form-init--back, .pack-init, .pack-init--back, 
+.check-pack-init, .check-pack-init--back{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .52rem;
+    line-height: .7rem;
+    font-weight: bold;
+    letter-spacing: 0.09em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: .01rem #262626;
+}
+
+.go .form-init, .go .form-init--back, .go .pack-init, .go .pack-init--back, 
+.go .check-pack-init, .go .check-pack-init--back{
+    -webkit-text-stroke: .01rem #fff;
+} 
+
+.go.scroll-third-row-container{
+    display: none;
+}
+
+.go .form-init, .go .pack-init, .go .check-pack-init {
+    &:after {
+        border: $rem solid rgba(255, 255, 255, 1);
+    }
+}
+
+.pack-init--back, .pack-init, .check-pack-init, .check-pack-init--back{
+    font-size: .7rem;
+}
+
+.form-init, .pack-init, .check-pack-init {
+    width: -moz-max-content, max-content, -webkit-max-content;
+    transition: all .8s ease;
+    position: relative;
+
+    &:after {
+        content: "";
+        width: .25rem;
+        height: .09rem;
+        border: $rem solid rgba(0, 0, 0, 0.795);
+        
+        position: absolute;
+        top: 50%;
+        right: -.35rem;
+
+        transform: translateY(-50%);
+    }
+
+    &--back{
+        display: none;
+
+        position: absolute;
+        bottom: (4*$rem);
+        left: (-7*$rem);
+
+        svg{
+            width: 3.5rem;
+            height: .4rem;
+
+            image{
+                display: block;
+                width: 100%;
+            }
+
+            text{transform: translateY(100%);}
+        }
+    }
+}
+
+.pack-init--back svg{
+    width: 5rem;
+    height: .6rem;
+}
+
+.check-pack-init--back svg{
+    width: 12rem;
+    height: .6rem;
+}
+
+
+// list1
+.scroll-first-row-list1,
+.scroll-third-row-list1 {
+    animation: marqueeL 30s linear infinite;
+}
+
+// list2
+.scroll-first-row-list2,
+.scroll-third-row-list2 {
+    animation: marquee2 30s linear infinite;
+    animation-delay: 15s;
+}
+
+.scroll-second-row-list1 {
+    animation: marqueeR 20s linear infinite;
+}
+
+.scroll-second-row-list2,
+svg image:hover {
+    animation: marquee3 20s linear infinite;
+    animation-delay: 10s;
+}
+
+.scroll-first-row-container,
+.scroll-third-row-container{
+    transition: 5s linear;
+    transform: translateX(-50%);
+    display: -webkit-box;
+    display: flex;
+    white-space: nowrap;
+}
+
+.scroll-second-row-container,
+.scroll-second-row-container svg image:hover {
+    transition: 5s linear;
+    transform: translateX(10%);
+    display: -webkit-box;
+    display: flex;
+    white-space: nowrap;
+}
+
+.scroll-first-row-container:hover,
+.scroll-second-row-container:hover,
+.scroll-third-row-container:hover {
+    transform: translateX(-30%);
+}
+
+@keyframes marqueeL {
+    from {transform: translateX(100%)}
+    to {transform: translateX(-100%)}
+}
+
+@keyframes marquee2 {
+    from {transform: translateX(0%)}
+    to {transform: translateX(-200%)}
+}
+
+@keyframes marqueeR {
+    from {transform: translateX(-100%)}
+    to {transform: translateX(100%)}
+}
+
+@keyframes marquee3 {
+    from {transform: translateX(-200%)}
+    to {transform: translateX(0%)}
+}

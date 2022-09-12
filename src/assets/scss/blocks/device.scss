@@ -1,0 +1,19 @@
+.device{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.first{
+    display: block;
+    width: 100%;
+    height: (900 * $rem);
+
+    img{
+        height: 100%;
+        position: absolute;
+        top: (-40*$rem);
+        left: (-300*$rem);
+        z-index: -1000;
+    }
+}

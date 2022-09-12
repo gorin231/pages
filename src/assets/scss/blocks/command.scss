@@ -1,0 +1,132 @@
+.command{
+    height: 100%;
+    padding: (150*$rem);
+    padding-bottom: .7rem;
+    text-align: center;
+
+    background-image: url("/assets/images/Rectangle\ 63.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.command__title{
+    font-weight: bold;
+    font-size: 3.42em;
+    text-transform: uppercase;
+    padding-bottom: .7rem;
+}
+
+.loaders{
+    margin: 0 auto;
+    justify-content: center;
+    width: (700*$rem);
+    height: (700*$rem);
+    align-items: center;
+}
+
+.loader__inner{
+    content: "";
+    border-radius: 50%;
+    border: 0.021rem solid #fff;
+
+    animation: 20s linear 0s normal none infinite running rot;
+
+    &--small{
+        width: (135*$rem);
+        height: (135*$rem);
+        position: absolute;
+        right: 31%;
+        top: 31%;
+    }
+
+    &--top{
+        display: block;
+        position: absolute;
+        right: 18%;
+        top: 18%;
+        width: (365*$rem);
+        height: (365*$rem);
+        border: .014rem dashed #000;
+        border-width: (3*$rem); 
+    }
+
+    &--big{
+        width: (600*$rem);
+        height: (600*$rem);
+        position: relative;
+        transform: translateX(-5%);
+    }
+
+    @keyframes rot {
+        0% {transform: rotate(0deg);
+        }
+        100% {transform: rotate(360deg);}
+    }
+}
+
+ .ciclegraph {
+	position: relative;
+    width: (577*$rem);
+    height: (577*$rem);
+    margin: (0.7rem / 2 );
+}
+
+.ciclegraph:before {
+	position: absolute;
+	top: 0; 
+    left: 0;
+    border: .05rem solid #000;
+    border-radius: 50%;
+}
+
+.ciclegraph .circle {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    z-index: 100;
+
+    box-sizing: border-box;
+    padding: (50*$rem) (10*$rem);
+    width: (150*$rem );
+    height: (150*$rem);
+    margin: ( -150*$rem / 2 );
+
+    background: transparent;
+
+    border-radius: 50%;
+    border: $rem solid #000;
+
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &--1{
+        padding: (60*$rem) (10*$rem);;
+    }
+
+    b{
+        display: inline-block;
+        animation: 20s linear 0s normal none infinite running rot2;
+        -webkit-animation: 20s linear 0s normal none infinite running rot2;
+    
+        @keyframes rot2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @-webkit-keyframes rot2 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+    }
+}

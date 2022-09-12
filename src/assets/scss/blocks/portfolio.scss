@@ -1,0 +1,55 @@
+.portfolio{
+    text-transform: uppercase;
+    font-weight: 800;
+
+    transition: transform .2s linear;
+
+    position: relative;
+
+    &:hover{
+        transform: scale(1.4);
+
+        &:after, &:before{
+            opacity: 0;
+        }
+    }
+
+    &:after, &:before{
+        height: (5*$rem);
+        width: (80*$rem);
+
+        content: "";
+        position: absolute;
+        top: 150%;
+        transform: translateY(-50%);
+
+        opacity: 1;
+        transition: opacity .2s linear;
+    }
+
+    &:before{
+        background-color: #D0D0D0;
+        left: (-15*$rem);
+    }
+
+    &:after{
+        left: ((-15*$rem) + (80*$rem));
+        background-color: #000;
+    }
+
+    &--right{
+        &:after, &:before{
+            width: (110*$rem);
+        }
+
+        &:before{
+            left: 0;
+        }
+    
+        &:after{
+            left: (110*$rem);
+        }
+    }
+}
+
+
